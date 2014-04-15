@@ -4,11 +4,14 @@ CONFIGDIR=devops
 
 all: build
 
+cfgcreate:
+	cd $(CONFIGDIR) && bundle && bundle exec s3_website cfg create
+
 cfgapply:
-	cd $(CONFIGDIR) && bundle exec s3_website cfg apply
+	cd $(CONFIGDIR) && bundle && bundle exec s3_website cfg apply
 
 push: build
-	cd $(CONFIGDIR) && bundle exec s3_website push --site ../$(OUT)
+	cd $(CONFIGDIR) && bundle && bundle exec s3_website push --site ../$(OUT)
 
 build: dev_dependencies third_party_javascripts
 	grunt
