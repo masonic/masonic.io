@@ -1,0 +1,20 @@
+{
+  "name": "org.ttrn.www",
+  "version": "0.0.1",
+  "authors": [
+    "brian@ttrn.org"
+  ],
+  "license": "MIT",
+  "homepage": "www.ttrn.org",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "*"
+  }
+}

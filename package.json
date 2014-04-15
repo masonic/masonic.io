@@ -1,0 +1,16 @@
+{
+  "name": "ttrn-web",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git"
+  },
+  "author": "brian@ttrn.org",
+  "devDependencies": {
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-devtools": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*"
+  }
+}

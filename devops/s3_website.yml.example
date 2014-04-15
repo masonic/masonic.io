@@ -1,0 +1,5 @@
+---
+# copy to s3_website.yml and fill in information
+s3_id: FIXME
+s3_secret: FIXME
+s3_bucket: FIXME
