@@ -9,8 +9,10 @@
     "grunt-contrib-clean": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-copy": "*",
-    "grunt-devtools": "*",
     "grunt-contrib-jshint": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-devtools": "*",
+    "load-grunt-tasks": "*",
+    "time-grunt": "*"
   }
 }
