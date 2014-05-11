@@ -1,11 +1,11 @@
 {
-  "name": "org.ttrn.www",
-  "version": "0.0.1",
+  "name": "io.masonic.www",
+  "version": "1.0.0",
   "authors": [
-    "brian@ttrn.org"
+    "brian@perfmode.com"
   ],
   "license": "MIT",
-  "homepage": "www.ttrn.org",
+  "homepage": "www.masonic.io",
   "private": true,
   "ignore": [
     "**/.*",

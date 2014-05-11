@@ -1,10 +1,10 @@
 {
-  "name": "ttrn-web",
-  "version": "0.0.1",
+  "name": "masonic-web",
+  "version": "1.0.0",
   "repository": {
     "type": "git"
   },
-  "author": "brian@ttrn.org",
+  "author": "brian@perfmode.com",
   "devDependencies": {
     "grunt-contrib-clean": "*",
     "grunt-contrib-connect": "*",
