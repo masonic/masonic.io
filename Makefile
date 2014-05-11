@@ -10,7 +10,10 @@ cfgcreate:
 cfgapply:
 	cd $(CONFIGDIR) && bundle && bundle exec s3_website cfg apply
 
-push: build
+push: build potentially_destructive_push_danger
+
+# if you push without building, you may have a Very Bad Time™
+potentially_destructive_push_danger:
 	cd $(CONFIGDIR) && bundle && bundle exec s3_website push --site ../$(OUT)
 
 build: dev_dependencies third_party_javascripts
