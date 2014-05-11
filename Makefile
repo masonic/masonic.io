@@ -33,3 +33,6 @@ clean:
 	rm -rf node_modules/
 	rm -rf $(IN)/components/
 	rm -rf tmp/
+
+ghdeploy:
+	./ghdeploy.sh
