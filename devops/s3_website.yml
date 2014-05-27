@@ -9,6 +9,7 @@ gzip: true
 gzip_zopfli: true
 
 redirects:
+    calendar: https://www.google.com/calendar/embed?src=calendar@masonic.io&ctz=America/Los_Angeles
     house: https://github.com/masonic/house
     info: https://github.com/masonic/house
     issues: https://github.com/masonic/house/issues
