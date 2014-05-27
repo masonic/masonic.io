@@ -10,3 +10,4 @@ gzip_zopfli: true
 
 redirects:
     issues: https://github.com/masonic/house/issues
+    new: https://github.com/masonic/house/issues/new
