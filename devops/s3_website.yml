@@ -7,3 +7,6 @@ cloudfront_distribution_id: E1GMSZTPSO5DK
 
 gzip: true
 gzip_zopfli: true
+
+redirects:
+    issues: https://github.com/masonic/house/issues
