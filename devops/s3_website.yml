@@ -9,6 +9,7 @@ gzip: true
 gzip_zopfli: true
 
 redirects:
+    house: https://github.com/masonic/house
     info: https://github.com/masonic/house
     issues: https://github.com/masonic/house/issues
     new: https://github.com/masonic/house/issues/new
