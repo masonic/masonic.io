@@ -26,9 +26,10 @@ end
 
 def main
 
-  pool = PhotoPool.new
+
   datastore = Datastore.new
 
+  pool = PhotoPool.new
   pool.each do |photo|
     err = datastore.put(photo)
     if err == nil then
