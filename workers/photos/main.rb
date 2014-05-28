@@ -34,7 +34,7 @@ def main
     if err == nil then
       pool.remove(photo)
     else
-      # TODO maybe retry
+      # TODO log failure; maybe retry
     end
   end
 end
