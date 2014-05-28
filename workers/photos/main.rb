@@ -3,6 +3,28 @@ require 'dropbox_sdk'
 require 'pathname'
 require 'uuid'
 
+def main
+
+  datastore = Datastore.new
+
+  # TODO bubble up errors
+  key = ENV['DBX_MASONIC_MEMORIES_KEY']
+  secret = ENV['DBX_MASONIC_MEMORIES_SECRET']
+  access_token = get_auth_token(key, secret)
+
+  client = DropboxClient.new(access_token)
+  pool = PhotoPool.new(client)
+
+  pool.each do |photo, path|
+    err = datastore.put(path, photo)
+    if err == nil then
+      pool.remove(path)
+    else
+      # TODO log failure; maybe retry
+    end
+  end
+end
+
 class Datastore
   def initialize
     @s3 = AWS::S3.new
@@ -80,28 +102,6 @@ def get_auth_token key, secret, interactive=false
 
   else
     return ENV['DBX_MASONIC_MEMORIES_DEV_TOKEN']
-  end
-end
-
-def main
-
-  datastore = Datastore.new
-
-  # TODO bubble up errors
-  key = ENV['DBX_MASONIC_MEMORIES_KEY']
-  secret = ENV['DBX_MASONIC_MEMORIES_SECRET']
-  access_token = get_auth_token(key, secret)
-
-  client = DropboxClient.new(access_token)
-  pool = PhotoPool.new(client)
-
-  pool.each do |photo, path|
-    err = datastore.put(path, photo)
-    if err == nil then
-      pool.remove(path)
-    else
-      # TODO log failure; maybe retry
-    end
   end
 end
 
