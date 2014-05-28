@@ -1,22 +1,31 @@
 require 'dropbox_sdk'
+require 'pathname'
 
 class Datastore
   def initialize
     # TODO auth AWS S3
   end
 
-  def put
+  def put blob
     nil
   end
 end
 
 class PhotoPool
   def initialize dbx_client
+    @client = dbx_client
   end
 
+  # TODO recursively traverse
   def each &block
-    # TODO access data in folder
-    # TODO yield photo
+    @client.metadata('/')['contents'].each do |item|
+      unless item['is_dir']
+        path = item['path']
+        contents, metadata = @client.get_file_and_metadata(path)
+        # TODO if is supported image
+        yield contents, metadata
+      end
+    end
   end
 
   def remove photo
@@ -69,7 +78,8 @@ def main
 
   client = DropboxClient.new(access_token)
   pool = PhotoPool.new(client)
-  pool.each do |photo|
+
+  pool.each do |photo, metadata|
     err = datastore.put(photo)
     if err == nil then
       pool.remove(photo)
