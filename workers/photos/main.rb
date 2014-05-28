@@ -48,11 +48,8 @@ def get_auth_token_interactive key, secret
   return access_token
 end
 
-def get_auth_token interactive=false
+def get_auth_token key, secret, interactive=false
   if interactive
-    # TODO bubble up errors
-    key = ENV['DBX_MASONIC_MEMORIES_KEY']
-    secret = ENV['DBX_MASONIC_MEMORIES_SECRET']
 
     while true
       begin
@@ -73,7 +70,11 @@ def main
 
   datastore = Datastore.new
 
-  access_token = get_auth_token
+  # TODO bubble up errors
+  key = ENV['DBX_MASONIC_MEMORIES_KEY']
+  secret = ENV['DBX_MASONIC_MEMORIES_SECRET']
+  access_token = get_auth_token(key, secret)
+
   client = DropboxClient.new(access_token)
   pool = PhotoPool.new(client)
 
