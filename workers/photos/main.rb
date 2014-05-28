@@ -26,6 +26,8 @@ end
 
 def main
 
+  key = ENV['DBX_MASONIC_MEMORIES_KEY']
+  secret = ENV['DBX_MASONIC_MEMORIES_SECRET']
 
   datastore = Datastore.new
 
