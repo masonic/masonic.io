@@ -7,7 +7,7 @@ class Datastore
     # TODO pass in config info (bucket, etc.)
   end
 
-  def put blob
+  def put path, blob
     # TODO store in bucket
     nil
   end
@@ -36,7 +36,7 @@ class PhotoPool
     end
   end
 
-  def remove_by_id photo_id
+  def remove photo_id
     @client.file_delete(photo_id)
     # TODO delete from dropbox
   end
@@ -87,10 +87,10 @@ def main
   client = DropboxClient.new(access_token)
   pool = PhotoPool.new(client)
 
-  pool.each do |photo, id|
-    err = datastore.put(photo)
+  pool.each do |photo, path|
+    err = datastore.put(path, photo)
     if err == nil then
-      pool.remove_by_id(id)
+      pool.remove(path)
     else
       # TODO log failure; maybe retry
     end
