@@ -4,9 +4,11 @@ require 'pathname'
 class Datastore
   def initialize
     # TODO auth AWS S3
+    # TODO pass in config info (bucket, etc.)
   end
 
   def put blob
+    # TODO store in bucket
     nil
   end
 end
@@ -18,11 +20,17 @@ class PhotoPool
 
   # TODO recursively traverse
   def each &block
+
+    # TODO extract and wrap client, item so this class doesn't know about the
+    # internals of the Dropbox data structures. Differentiate between files and
+    # directories for ease of recursive traversal.
+
     @client.metadata('/')['contents'].each do |item|
       unless item['is_dir']
         path = item['path']
         contents, metadata = @client.get_file_and_metadata(path)
-        # TODO if is supported image
+        # TODO only yield if mime type is that of supported image type
+        # TODO return only a minimal, useful subset of metadata
         yield contents, metadata
       end
     end
