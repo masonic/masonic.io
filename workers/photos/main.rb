@@ -1,14 +1,21 @@
+require 'aws-sdk'
 require 'dropbox_sdk'
 require 'pathname'
+require 'uuid'
 
 class Datastore
   def initialize
+    @s3 = AWS::S3.new
     # TODO auth AWS S3
     # TODO pass in config info (bucket, etc.)
+    @uuid_generator = UUID.new
+    bucket_name = "masonic-memories-dev"
+    @bucket = @s3.buckets[bucket_name]
   end
 
   def put path, blob
-    # TODO store in bucket
+    key = "#{@uuid_generator.generate}-#{Pathname.new(path).basename}"
+    object = @bucket.objects.create(key, blob, :acl => :public_read)
     nil
   end
 end
@@ -25,19 +32,20 @@ class PhotoPool
     # internals of the Dropbox data structures. Differentiate between files and
     # directories for ease of recursive traversal.
 
+
     @client.metadata('/')['contents'].each do |item|
       unless item['is_dir']
         path = item['path']
-        contents, metadata = @client.get_file_and_metadata(path)
+        contents = @client.get_file(path)
         # TODO only yield if mime type is that of supported image type
         # TODO return only a minimal, useful subset of metadata
-        yield contents, metadata['path']
+        yield(contents, path)
       end
     end
   end
 
   def remove photo_id
-    @client.file_delete(photo_id)
+    #@client.file_delete(photo_id)
     # TODO delete from dropbox
   end
 end
