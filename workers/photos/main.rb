@@ -11,8 +11,7 @@ class Datastore
 end
 
 class PhotoPool
-  def initialize
-    # TODO authenticate dropbox api
+  def initialize dbx_client
   end
 
   def each &block
@@ -65,11 +64,11 @@ def main
 
   access_token = get_auth_token
 
-  client = DropboxClient.new(access_token)
 
   datastore = Datastore.new
 
-  pool = PhotoPool.new
+  client = DropboxClient.new(access_token)
+  pool = PhotoPool.new(client)
   pool.each do |photo|
     err = datastore.put(photo)
     if err == nil then
