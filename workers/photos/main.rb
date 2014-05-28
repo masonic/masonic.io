@@ -31,12 +31,13 @@ class PhotoPool
         contents, metadata = @client.get_file_and_metadata(path)
         # TODO only yield if mime type is that of supported image type
         # TODO return only a minimal, useful subset of metadata
-        yield contents, metadata
+        yield contents, metadata['path']
       end
     end
   end
 
-  def remove photo
+  def remove_by_id photo_id
+    @client.file_delete(photo_id)
     # TODO delete from dropbox
   end
 end
@@ -86,10 +87,10 @@ def main
   client = DropboxClient.new(access_token)
   pool = PhotoPool.new(client)
 
-  pool.each do |photo, metadata|
+  pool.each do |photo, id|
     err = datastore.put(photo)
     if err == nil then
-      pool.remove(photo)
+      pool.remove_by_id(id)
     else
       # TODO log failure; maybe retry
     end
