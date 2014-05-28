@@ -71,11 +71,9 @@ end
 
 def main
 
-  access_token = get_auth_token
-
-
   datastore = Datastore.new
 
+  access_token = get_auth_token
   client = DropboxClient.new(access_token)
   pool = PhotoPool.new(client)
 
