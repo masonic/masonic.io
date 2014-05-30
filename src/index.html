@@ -47,11 +47,15 @@ audio {
 setTimeout(function() {
   $('#curtain').fadeOut('slow');
 }, 5000);
+
+setTimeout(function() {
+  $('marquee#welcome').css('display', 'block');
+}, 7000)
 </script>
 </head>
 <body>
 
-<h1><marquee scrollamount=50>WELCOME TO MASONIC</marquee></h1>
+<h1><marquee id="welcome" scrollamount=50 style="display: none;">WELCOME TO MASONIC</marquee></h1>
 
 <div id="curtain">
 </div>
