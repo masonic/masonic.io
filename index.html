@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Eyes bleeding yet?</title>
+<style type="text/css">
+
+body {
+  background-image: url("impossible.gif");
+  background-position: center;
+  background-size: cover;
+}
+
+.leftcat {
+  width: 80%;
+  position: absolute;
+  left: -350px;
+  bottom: -350px;
+}
+
+.ritecat {
+  width: 40%;
+  position: absolute;
+  right: -250px;
+  bottom: -250px;
+}
+
+h1 {
+  color: #FF0;
+  font-size: 1000%;
+}
+
+audio {
+  display: none;
+}
+
+#curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+</style>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+var audioPlayer;
+
+function curtain() {
+  console.log('curtain');
+  $('#curtain').fadeOut('slow');
+}
+
+function voice() {
+  console.log('voice');
+  audioPlayer.play();
+}
+
+function marquee() {
+  $('marquee#welcome').css('display', 'block');
+}
+
+function cats() {
+  console.log('meow!');
+  $('.leftcat').animate({ left: "0px", bottom: "0px"}, 30 * 1000)
+  $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
+}
+
+setTimeout(curtain, 7 * 1000);
+setTimeout(voice, 20 * 1000);
+setTimeout(marquee, 22 * 1000);
+setTimeout(cats, 24 * 1000);
+
+</script>
+</head>
+<body>
+
+<h1><marquee id="welcome" scrollamount=50 style="display: none;">WELCOME TO MASONIC</marquee></h1>
+
+<div id="curtain">
+</div>
+
+<img class="leftcat cat" src="img/bottom-left.png">
+<img class="ritecat cat" src="img/bottom-alright.png">
+
+<audio controls loop id="welcomeVader" onloadeddata="audioPlayer = this;">
+  <source src="media/welcome.m4a" type="audio/mpeg">
+</audio>
+
+<iframe src="http://www.youtube.com/embed/qLxCOIAkbyQ?start=10&autoplay=1" style="position: relative; left: -100000px"></iframe>
+
+<script src="js/rate.js"></script>
+
+</body>
+</html>
