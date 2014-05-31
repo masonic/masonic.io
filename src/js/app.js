@@ -45,6 +45,7 @@ $(function() {
     }, delay);
   }
 
+  // TODO implement animated text credits
   function showCredit(name) {
       console.log(name);
   }
