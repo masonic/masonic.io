@@ -8,8 +8,8 @@ $(function() {
   function voice() {
     console.log('voice');
     var audioElement = document.getElementById("welcomeVader");
-    audioElement.playbackRate = 0.5
-  audioElement.play();
+    audioElement.playbackRate = 0.5;
+    audioElement.play();
   }
 
   function marquee() {
