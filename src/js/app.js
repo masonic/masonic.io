@@ -11,25 +11,11 @@ $(function() {
   function credits() {
     console.log('credits');
     var names = [
-      'Adrienne',
-      'Annelie',
-      'Antony',
       'Brian',
-      'Chas',
       'Cy',
-      'Davidad',
-      'Hani',
-      'Hannah',
-      'Kat',
-      'Laura B.',
-      'Laura D.',
-      'Lily',
-      'Liz',
+      'Dan',
       'Polar Bear',
       'Sebastien',
-      'Shameer',
-      'Siraj',
-      'Virgil',
       'Walrus',
     ];
 
