@@ -63,35 +63,35 @@ audio {
 <script src="js/rate.js"></script>
 <script type="text/javascript">
 
-  (function() {
+  $(function() {
 
-   var audioPlayer;
+      var audioPlayer;
 
-   function curtain() {
-   console.log('curtain');
-   $('#curtain').fadeOut('slow');
-   }
+      function curtain() {
+      console.log('curtain');
+      $('#curtain').fadeOut('slow');
+      }
 
-   function voice() {
-   console.log('voice');
-   audioPlayer.play();
-   }
+      function voice() {
+      console.log('voice');
+      audioPlayer.play();
+      }
 
-   function marquee() {
-   $('marquee#welcome').css('display', 'block');
-   }
+      function marquee() {
+      $('marquee#welcome').css('display', 'block');
+      }
 
-   function cats() {
-   console.log('meow!');
-   $('.leftcat').animate({ left: "0px", bottom: "0px"}, 30 * 1000)
-     $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
-   }
+      function cats() {
+      console.log('meow!');
+      $('.leftcat').animate({ left: "0px", bottom: "0px"}, 30 * 1000)
+        $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
+      }
 
-   setTimeout(curtain, 7 * 1000);
-   setTimeout(voice, 20 * 1000);
-   setTimeout(marquee, 22 * 1000);
-   setTimeout(cats, 24 * 1000);
-  })();
+      setTimeout(curtain, 7 * 1000);
+      setTimeout(voice, 20 * 1000);
+      setTimeout(marquee, 22 * 1000);
+      setTimeout(cats, 24 * 1000);
+  });
 
 </script>
 
