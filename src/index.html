@@ -42,6 +42,25 @@ audio {
 }
 
 </style>
+</head>
+<body>
+
+<h1><marquee id="welcome" scrollamount=50 style="display: none;">WELCOME TO MASONIC</marquee></h1>
+
+<div id="curtain">
+</div>
+
+<img class="leftcat cat" src="img/bottom-left.png">
+<img class="ritecat cat" src="img/bottom-alright.png">
+
+<audio controls loop id="welcomeVader" onloadeddata="audioPlayer = this;">
+  <source src="media/welcome.m4a" type="audio/mpeg">
+</audio>
+
+<iframe src="http://www.youtube.com/embed/qLxCOIAkbyQ?start=10&autoplay=1" style="position: relative; left: -100000px"></iframe>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/rate.js"></script>
 <script type="text/javascript">
 
   (function() {
@@ -75,25 +94,6 @@ audio {
   })();
 
 </script>
-</head>
-<body>
-
-<h1><marquee id="welcome" scrollamount=50 style="display: none;">WELCOME TO MASONIC</marquee></h1>
-
-<div id="curtain">
-</div>
-
-<img class="leftcat cat" src="img/bottom-left.png">
-<img class="ritecat cat" src="img/bottom-alright.png">
-
-<audio controls loop id="welcomeVader" onloadeddata="audioPlayer = this;">
-  <source src="media/welcome.m4a" type="audio/mpeg">
-</audio>
-
-<iframe src="http://www.youtube.com/embed/qLxCOIAkbyQ?start=10&autoplay=1" style="position: relative; left: -100000px"></iframe>
-
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="js/rate.js"></script>
 
 </body>
 </html>
