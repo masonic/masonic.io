@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Eyes bleeding yet?</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic' rel='stylesheet' type='text/css'>
 <style type="text/css">
 
 body {
@@ -26,10 +27,26 @@ body {
 h1 {
   color: #FF0;
   font-size: 1000%;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 800;
 }
 
 audio {
   display: none;
+}
+
+#name {
+  color: #FF0;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 100px;
+  margin-top: 500px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  -webkit-text-stroke: 3px black;
 }
 
 #curtain {
@@ -46,6 +63,9 @@ audio {
 <body>
 
 <h1><marquee id="welcome" scrollamount=50 style="display: none;">WELCOME TO MASONIC</marquee></h1>
+
+<div id="name">
+</div>
 
 <div id="curtain">
 </div>

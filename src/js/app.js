@@ -48,7 +48,9 @@ $(function() {
 
   // TODO implement animated text credits
   function showCredit(name) {
-      console.log(name);
+    console.log(name);
+    var nameElem = $('#name');
+    $('#name').html(name.toUpperCase());
   }
 
   function curtain() {
@@ -77,6 +79,6 @@ $(function() {
   setTimeout(credits, cues.curtain);
   setTimeout(voice, cues.voice);
   setTimeout(marquee, cues.marquee);
-  setTimeout(cats, cues.cats);
+  setTimeout(cats, cues.marquee);
 });
 
