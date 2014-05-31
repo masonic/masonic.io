@@ -1,10 +1,10 @@
 $(function() {
 
   var cues = {
+    cats: 24 * 1000,
     curtain: 7 * 1000,
-    voice: 20 * 1000,
     marquee: 22 * 1000,
-    cats: 24 * 1000
+    voice: 20 * 1000
   };
 
   function curtain() {
