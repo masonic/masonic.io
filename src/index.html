@@ -44,32 +44,36 @@ audio {
 </style>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-var audioPlayer;
 
-function curtain() {
-  console.log('curtain');
-  $('#curtain').fadeOut('slow');
-}
+  (function() {
 
-function voice() {
-  console.log('voice');
-  audioPlayer.play();
-}
+   var audioPlayer;
 
-function marquee() {
-  $('marquee#welcome').css('display', 'block');
-}
+   function curtain() {
+   console.log('curtain');
+   $('#curtain').fadeOut('slow');
+   }
 
-function cats() {
-  console.log('meow!');
-  $('.leftcat').animate({ left: "0px", bottom: "0px"}, 30 * 1000)
-  $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
-}
+   function voice() {
+   console.log('voice');
+   audioPlayer.play();
+   }
 
-setTimeout(curtain, 7 * 1000);
-setTimeout(voice, 20 * 1000);
-setTimeout(marquee, 22 * 1000);
-setTimeout(cats, 24 * 1000);
+   function marquee() {
+   $('marquee#welcome').css('display', 'block');
+   }
+
+   function cats() {
+   console.log('meow!');
+   $('.leftcat').animate({ left: "0px", bottom: "0px"}, 30 * 1000)
+     $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
+   }
+
+   setTimeout(curtain, 7 * 1000);
+   setTimeout(voice, 20 * 1000);
+   setTimeout(marquee, 22 * 1000);
+   setTimeout(cats, 24 * 1000);
+  })();
 
 </script>
 </head>
