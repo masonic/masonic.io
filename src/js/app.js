@@ -1,5 +1,12 @@
 $(function() {
 
+  var cues = {
+    curtain: 7 * 1000,
+    voice: 20 * 1000,
+    marquee: 22 * 1000,
+    cats: 24 * 1000
+  };
+
   function curtain() {
     console.log('curtain');
     $('#curtain').fadeOut('slow');
@@ -22,9 +29,9 @@ $(function() {
       $('.ritecat').animate({ right: "0px", bottom: "0px"}, 30 * 1000)
   }
 
-  setTimeout(curtain, 7 * 1000);
-  setTimeout(voice, 20 * 1000);
-  setTimeout(marquee, 22 * 1000);
-  setTimeout(cats, 24 * 1000);
+  setTimeout(curtain, cues.curtain);
+  setTimeout(voice, cues.voice);
+  setTimeout(marquee, cues.marquee);
+  setTimeout(cats, cues.cats);
 });
 
