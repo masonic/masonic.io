@@ -51,6 +51,10 @@ $(function() {
     audioElement.play();
   }
 
+  function theme() {
+    document.getElementById("theme").play();
+  }
+
   function marquee() {
     $('marquee#welcome').css('display', 'block');
   }
@@ -66,5 +70,6 @@ $(function() {
   setTimeout(voice, cues.voice);
   setTimeout(marquee, cues.marquee);
   setTimeout(cats, cues.marquee);
+  theme();
 });
 
