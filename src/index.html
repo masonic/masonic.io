@@ -53,7 +53,7 @@ audio {
 <img class="leftcat cat" src="img/bottom-left.png">
 <img class="ritecat cat" src="img/bottom-alright.png">
 
-<audio controls loop id="welcomeVader" onloadeddata="audioPlayer = this;">
+<audio controls loop id="welcomeVader">
   <source src="media/welcome.m4a" type="audio/mpeg">
 </audio>
 
@@ -65,8 +65,6 @@ audio {
 
   $(function() {
 
-      var audioPlayer;
-
       function curtain() {
       console.log('curtain');
       $('#curtain').fadeOut('slow');
@@ -74,7 +72,9 @@ audio {
 
       function voice() {
       console.log('voice');
-      audioPlayer.play();
+      var audioElement = document.getElementById("welcomeVader");
+      audioElement.playbackRate = 0.5
+      audioElement.play();
       }
 
       function marquee() {
