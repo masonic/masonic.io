@@ -7,6 +7,48 @@ $(function() {
     voice: 20 * 1000
   };
 
+  function credits() {
+    console.log('credits');
+    var names = [
+      'Adrienne',
+      'Annelie',
+      'Antony',
+      'Brian',
+      'Chas',
+      'Cy',
+      'Davidad',
+      'Hani',
+      'Hannah',
+      'Kat',
+      'Laura B.',
+      'Laura D.',
+      'Lily',
+      'Liz',
+      'Polar Bear',
+      'Sebastien',
+      'Shameer',
+      'Siraj',
+      'Virgil',
+      'Walrus',
+    ];
+
+    var timePerName = (cues.marquee - cues.curtain) / names.length;
+    for (var i = 0; i < names.length; i++) {
+      var delay = i * timePerName;
+      queueCredit(names[i], delay);
+    }
+  }
+
+  function queueCredit(name, delay) {
+    setTimeout(function() {
+      showCredit(name);
+    }, delay);
+  }
+
+  function showCredit(name) {
+      console.log(name);
+  }
+
   function curtain() {
     console.log('curtain');
     $('#curtain').fadeOut('slow');
@@ -30,6 +72,7 @@ $(function() {
   }
 
   setTimeout(curtain, cues.curtain);
+  setTimeout(credits, cues.curtain);
   setTimeout(voice, cues.voice);
   setTimeout(marquee, cues.marquee);
   setTimeout(cats, cues.cats);
