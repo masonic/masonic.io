@@ -1,10 +1,11 @@
 $(function() {
 
+  var SECONDS = 1000;
   var cues = {
-    cats: 24 * 1000,
-    curtain: 7 * 1000,
-    marquee: 22 * 1000,
-    voice: 20 * 1000
+    cats: 24 * SECONDS,
+    curtain: 7 * SECONDS,
+    marquee: 22 * SECONDS,
+    voice: 20 * SECONDS
   };
 
   function credits() {
