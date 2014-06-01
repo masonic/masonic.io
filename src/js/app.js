@@ -66,12 +66,12 @@ $(function() {
   }
 
   var MAX_ACC = 0.2;
-  var w = screen.availWidth/2;
-  var h = screen.availHeight/2;
+  var w = screen.availWidth;
+  var h = screen.availHeight;
 
   function rocketCat(selection) {
-    var x = w * Math.random();
-    var y = h * Math.random();
+    var x = w + w * Math.random();
+    var y = h + h * Math.random();
     var vx = 0;
     var vy = 0;
 
@@ -100,7 +100,7 @@ $(function() {
       x += vx;
       y += vy;
 
-      if (selection) selection.style({top: y, left: x});
+      if (selection) selection.style({top: y, left: x, visibility: "visible"});
       return [x, y]
     }
   }
@@ -167,7 +167,7 @@ $(function() {
 
   };
 
-  setInterval(makeTheCatGo, 40);
+  setInterval(makeTheCatGo, 16);
 
   setTimeout(curtain, cues.curtain);
   setTimeout(credits, cues.curtain);
